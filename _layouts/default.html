@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page.title }} - OSDev Rocks</title>
+    <link rel="stylesheet" href="https://brightshard.dev/main.css" />
+    <link rel="stylesheet" href="https://brightshard.dev/site-layout.css" />
+    <style>
+        #content {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <div id="navbar">
+            <a href="/" class="navbar-item">
+                <span class="navbar-icon material-symbols">home</span>
+                <p class="navbar-label">Home</p>
+            </a>
+
+            <a href="#page-settings" class="navbar-item" id="settings-icon">
+                <span class="navbar-icon material-symbols"> settings </span>
+            </a>
+        </div>
+
+        <div id="content" class="page">
+            {{ content }}
+        </div>
+    </div>
+</body>
+
+</html>
