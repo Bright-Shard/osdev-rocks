@@ -1,35 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{{ page.title }} - OSDev Rocks</title>
+        <link rel="stylesheet" href="/style.css" />
+        <style>
+            #navigation a[href="{{ page.permalink }}"] {
+                text-decoration: underline;
+                color: var(--lavender);
+            }
+        </style>
+    </head>
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ page.title }} - OSDev Rocks</title>
-    <link rel="stylesheet" href="https://brightshard.dev/main.css" />
-    <link rel="stylesheet" href="https://brightshard.dev/site-layout.css" />
-    <style>
-        #content {
-            display: block;
-        }
-    </style>
-</head>
+    <body>
+        <div id="titlebar">
+            <a href="/" id="title">OSDev Rocks!</a>
 
-<body>
-    <div id="root">
-        <div id="navbar">
-            <a href="/" class="navbar-item">
-                <span class="navbar-icon material-symbols">home</span>
-                <p class="navbar-label">Home</p>
-            </a>
+            <div id="navigation">
+                <a href="/">Home</a>
+                <a href="https://github.com/bright-shard/osdev-rocks">GitHub</a>
 
-            <a href="#page-settings" class="navbar-item" id="settings-icon">
-                <span class="navbar-icon material-symbols"> settings </span>
-            </a>
+                <!-- Shamelessly stolen from Michael Tsai's search: https://mjtsai.com -->
+                <form
+                    id="search"
+                    action="https://duckduckgo.com"
+                    method="get"
+                    enctype="application/x-www-form-urlencoded"
+                >
+                    <input
+                        id="search-box"
+                        maxlength="200"
+                        type="search"
+                        name="q"
+                        placeholder="Search with DuckDuckGo..."
+                    />
+                    <input type="hidden" name="sites" value="osdev.rocks" />
+                    <input
+                        id="search-button"
+                        value="search"
+                        class="icon"
+                        type="submit"
+                    />
+                </form>
+            </div>
         </div>
 
-        <div id="content" class="page">
-            {{ content }}
+        {% if page.no-toc != true %}
+        <div id="page-toc">
+            <a href="#page-title" id="page-toc-title"> {{ page.title }} </a>
+            {% include toc.html html=content %}
         </div>
-    </div>
-</body>
+        {% endif %}
 
+        <div id="page">
+            <h1 id="page-title">{{ page.title }}</h1>
+
+            <div id="page-content">{{ content }}</div>
+        </div>
+    </body>
 </html>

@@ -1,0 +1,41 @@
+table {
+    width: 100%;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 16px;
+    border-color: var(--overlay-0);
+    border-spacing: 0;
+
+    thead th {
+        background-color: var(--surface-0);
+
+        &:first-of-type {
+            border-top-left-radius: 16px;
+        }
+        &:last-of-type {
+            border-top-right-radius: 16px;
+        }
+    }
+
+    th, td {
+        padding: var(--gap);
+
+        border-style: solid;
+        border-width: 0px;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+        border-color: var(--overlay-0);
+
+        &:last-of-type {
+            border-right-width: 0px;
+        }
+    }
+
+    tbody tr:last-of-type td {
+        border-bottom-width: 0px;
+    }
+}
+
+.footnote {
+    text-decoration: none;
+}

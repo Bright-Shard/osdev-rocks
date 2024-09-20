@@ -1,0 +1,55 @@
+@layer defaults, widgets, overrides;
+
+@layer widgets {
+    @import "layout";
+    @import "widgets";
+}
+
+@layer defaults {
+    @font-face {
+        font-family: "Material Symbols";
+        font-style: normal;
+        font-weight: 100 700;
+        src: url("fonts/material-icons.woff2") format("woff2");
+    }
+
+    @font-face {
+        font-family: "Roboto Flex";
+        font-style: normal;
+        font-weight: 100 800;
+        font-stretch: 100%;
+        font-display: swap;
+        src: url("fonts/roboto-flex.woff2") format("woff2");
+    }
+
+    @font-face {
+        font-family: "Roboto Mono";
+        font-style: normal;
+        font-weight: 100 700;
+        font-display: swap;
+        src: url("fonts/roboto-mono.woff2") format("woff2");
+    }
+
+    body {
+        --background: #1e1e2e;
+        --surface-0: #313244;
+        --surface-1: #45475a;
+        --surface-2: #585b70;
+        --text: #cdd6f4;
+        --subtext-0: #a6adc8;
+        --subtext-1: #bac2de;
+        --overlay-0: #6c7086;
+        --animation-duration: 0.4s;
+        --gap: 10px;
+        --gap-large: 15px;
+        --lavender: #b4befe;
+
+        font-family: "Roboto Flex";
+        background-color: var(--background);
+        color: var(--text);
+    }
+
+    .icon {
+        font-family: "Material Symbols";
+    }
+}
